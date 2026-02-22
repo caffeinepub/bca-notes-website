@@ -1,0 +1,92 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add PDF upload and management organized by subject",
+  "requirements": [
+    {
+      "id": "REQ-15",
+      "summary": "Create admin panel interface for managing PDFs with file upload, subject selection, title and description fields, and list view organized by subject",
+      "acceptanceCriteria": [
+        "Admin panel includes new PDFs tab alongside existing Notes, Syllabus, and PYQ tabs",
+        "Form allows PDF file upload with subject dropdown, title, and description inputs",
+        "List view displays uploaded PDFs grouped or filtered by subject",
+        "Admin can edit PDF metadata and delete PDFs from the interface",
+        "File upload handles PDF format validation and size limits"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/admin/PDFForm.tsx",
+          "operation": "create",
+          "description": "Create form component for uploading and editing PDFs with fields for file upload input (accept only PDF files), subject dropdown, title input, and description textarea. Include file validation for PDF format and size limits. Handle both create mode (with file upload) and edit mode (metadata only, no file re-upload). Use React Hook Form for validation and mutations from useQueries for submission. Display loading states during upload and show success/error toast notifications."
+        },
+        {
+          "path": "frontend/src/components/admin/PDFManager.tsx",
+          "operation": "create",
+          "description": "Create admin component for managing PDFs with list view displaying all uploaded PDFs organized by subject. Show PDF title, description, subject badge, and action buttons for edit and delete. Include create new PDF button that toggles to PDFForm. Implement delete confirmation dialog. Use custom hooks from useQueries for fetching PDF list and handling delete mutations. Follow the same pattern as NotesManager, SyllabusManager, and PYQManager components."
+        },
+        {
+          "path": "frontend/src/pages/AdminPanel.tsx",
+          "operation": "modify",
+          "description": "Add a new 'PDFs' tab to the existing Tabs component alongside Notes, Syllabus, and PYQ tabs. Import and render PDFManager component in the corresponding TabsContent. Maintain consistent styling and layout with existing tabs."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Create public-facing interface where authenticated users can browse and view PDFs organized by subject with download or view capabilities",
+      "acceptanceCriteria": [
+        "New navigation item for PDFs appears in header alongside Notes, Syllabus, and PYQ",
+        "PDFs page displays files organized by subject categories",
+        "Users can filter or browse PDFs by subject",
+        "Each PDF entry shows title, description, and subject",
+        "Users can view or download PDF files",
+        "Access requires user authentication"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PDFCard.tsx",
+          "operation": "create",
+          "description": "Create card component for displaying individual PDF entries with title, description, subject badge, and action buttons for view/download. Include icon indicating PDF file type. Use shadcn/ui Card components for consistent styling. Add click handler to trigger PDF download or open in new tab using blob data from backend."
+        },
+        {
+          "path": "frontend/src/components/PDFFilters.tsx",
+          "operation": "create",
+          "description": "Create filter component for PDFs with dropdown for subject selection and clear filters button. Follow the same pattern as PYQFilters component. Use shadcn/ui Select components and maintain consistent styling with existing filter components."
+        },
+        {
+          "path": "frontend/src/pages/PDFsPage.tsx",
+          "operation": "create",
+          "description": "Create public PDF browsing page that fetches all PDFs using getAllPDFs query hook. Include PDFFilters component for subject filtering and display filtered PDFs in grid layout using PDFCard components. Require authentication using useInternetIdentity hook - show login prompt for unauthenticated users. Include loading skeleton and error states. Handle PDF download by converting fileData Uint8Array to blob and triggering browser download."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add 'PDFs' navigation item to the navItems array between 'PYQ' and 'Admin'. Use consistent structure with existing navigation items including label and href properties. Ensure the new navigation item is included in the dynamic rendering logic and active route highlighting."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register new route for PDFs page in the TanStack Router configuration. Import PDFsPage component and add route definition with path '/pdfs' following the same pattern as existing routes for notes, syllabus, and PYQ pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Implement React Query hooks for PDF CRUD operations including upload mutation, list query with subject filtering, update mutation, and delete mutation with automatic cache invalidation",
+      "acceptanceCriteria": [
+        "Custom hooks follow existing pattern in useQueries.ts",
+        "Upload mutation handles file data and metadata",
+        "List query supports filtering by subject",
+        "Cache invalidation occurs after create, update, or delete operations",
+        "Loading and error states are properly managed"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add React Query hooks for PDF operations following existing patterns: useGetAllPDFs (query hook to fetch all PDFs), useGetPDF (query hook to fetch single PDF by id), useCreatePDF (mutation hook for uploading PDF with file data conversion from File to Uint8Array), useUpdatePDF (mutation hook for updating PDF metadata only), and useDeletePDF (mutation hook for deletion). Include proper cache invalidation using queryClient.invalidateQueries for 'pdfs' query key after create, update, and delete operations. Handle file-to-bytes conversion in the create mutation. Ensure all hooks use the actor instance from useActor and include proper error handling."
+        }
+      ]
+    }
+  ]
+}

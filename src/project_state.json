@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "A password-protected website for BCA (Bachelor of Computer Applications) notes, syllabus, and previous year questions (PYQ). The creator is the admin, and other users can access the site using a password set by the admin.",
+  "architectural_notes": [
+    "Website will have admin and user roles",
+    "Single shared password for all users (set by admin)",
+    "Content types: notes, syllabus, previous year questions",
+    "PDF file uploads organized by subject"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-an-admin-authentication-system-where-the-creator-is-the-sole-admin-with-full-access-to-manage-content",
+      "title": "Create an admin authentication system where the creator is the sole admin with full access to manage content",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-panel-interface-with-sections-to-upload-edit-and-delete-bca-notes",
+      "title": "Create an admin panel interface with sections to upload, edit, and delete BCA notes",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-panel-interface-with-sections-to-upload-edit-and-delete-bca-syllabus-information",
+      "title": "Create an admin panel interface with sections to upload, edit, and delete BCA syllabus information",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-panel-interface-with-sections-to-upload-edit-and-delete-previous-year-questions-pyq",
+      "title": "Create an admin panel interface with sections to upload, edit, and delete previous year questions (PYQ)",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-public-facing-interface-where-password-authenticated-users-can-browse-and-view-bca-notes-organized-by-categories-or-subjects",
+      "title": "Create a public-facing interface where password-authenticated users can browse and view BCA notes organized by categories or subjects",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-public-facing-interface-where-password-authenticated-users-can-browse-and-view-bca-syllabus-organized-by-semester-and-subject",
+      "title": "Create a public-facing interface where password-authenticated users can browse and view BCA syllabus organized by semester and subject",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-public-facing-interface-where-password-authenticated-users-can-browse-and-view-previous-year-questions-organized-by-year-and-subject",
+      "title": "Create a public-facing interface where password-authenticated users can browse and view previous year questions organized by year and subject",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-cohesive-visual-theme-for-the-website-using-a-modern-academic-aesthetic-with-clean-typography-organized-layouts-and-a-professional-color-palette-that-evokes-trust-and-learning-ensuring-consistent-application-across-all-pages",
+      "title": "Design a cohesive visual theme for the website using a modern academic aesthetic with clean typography, organized layouts, and a professional color palette that evokes trust and learning, ensuring consistent application across all pages",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-interface-for-managing-pdfs-with-file-upload-subject-selection-title-and-description-fields-and-list-view-showing-existing-pdfs-organized-by-subject",
+      "title": "Create admin panel interface for managing PDFs with file upload, subject selection, title and description fields, and list view showing existing PDFs organized by subject",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-public-facing-interface-where-authenticated-users-can-browse-and-view-pdfs-organized-by-subject-with-download-or-view-capabilities",
+      "title": "Create public-facing interface where authenticated users can browse and view PDFs organized by subject with download or view capabilities",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-react-query-hooks-for-pdf-crud-operations-including-upload-mutation-list-query-with-subject-filtering-update-mutation-and-delete-mutation-with-automatic-cache-invalidation",
+      "title": "Implement React Query hooks for PDF CRUD operations including upload mutation, list query with subject filtering, update mutation, and delete mutation with automatic cache invalidation",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Admin panel to manage content (notes, syllabus, PYQ)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Password-protected access for users",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Admin capability to set/change access password",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Display BCA notes on the website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Display BCA syllabus on the website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Display previous year questions (PYQ) on the website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement a password-based access control system where the admin can set and update a single shared password that all users must enter to access the website content",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Create backend data structures and CRUD operations for storing and managing BCA notes including title, description, content, and metadata",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Create backend data structures and CRUD operations for storing and managing BCA syllabus information including semester, subject, topics, and course details",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Create backend data structures and CRUD operations for storing and managing previous year questions including year, semester, subject, and question content",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Add ability to upload and manage PDF files organized by subject",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Create backend data structure to store PDF files with metadata including subject, title, description, and file data as Blob type",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Implement backend CRUD operations for PDF management: create (upload), read (list and retrieve), update (metadata), and delete PDFs with admin-only access control",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "BCA Notes Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

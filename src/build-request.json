@@ -1,0 +1,124 @@
+{
+  "kind": "build_request",
+  "title": "Add PDF upload and management organized by subject",
+  "projectName": "BCA Hub",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "text": "Create backend data structure to store PDF files with metadata including subject, title, description, and file data as Blob type",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-final"
+        ],
+        "quotes": [
+          "i wanna add pdf subject wise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "PDF data structure includes fields for subject, title, description, and file blob",
+        "Backend supports storing and retrieving PDF file data",
+        "PDFs are associated with specific subjects for organization"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Implement backend CRUD operations for PDF management: create (upload), read (list and retrieve), update (metadata), and delete PDFs with admin-only access control",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-final"
+        ],
+        "quotes": [
+          "i wanna add pdf subject wise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can upload new PDF files with subject and metadata",
+        "Admin can list all PDFs filtered by subject",
+        "Admin can update PDF metadata",
+        "Admin can delete PDFs",
+        "All operations require admin authentication"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Create admin panel interface for managing PDFs with file upload, subject selection, title and description fields, and list view showing existing PDFs organized by subject",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-final"
+        ],
+        "quotes": [
+          "i wanna add pdf subject wise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin panel includes new PDFs tab alongside existing Notes, Syllabus, and PYQ tabs",
+        "Form allows PDF file upload with subject dropdown, title, and description inputs",
+        "List view displays uploaded PDFs grouped or filtered by subject",
+        "Admin can edit PDF metadata and delete PDFs from the interface",
+        "File upload handles PDF format validation and size limits"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Create public-facing interface where authenticated users can browse and view PDFs organized by subject with download or view capabilities",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-final"
+        ],
+        "quotes": [
+          "i wanna add pdf subject wise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "New navigation item for PDFs appears in header alongside Notes, Syllabus, and PYQ",
+        "PDFs page displays files organized by subject categories",
+        "Users can filter or browse PDFs by subject",
+        "Each PDF entry shows title, description, and subject",
+        "Users can view or download PDF files",
+        "Access requires user authentication"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Implement React Query hooks for PDF CRUD operations including upload mutation, list query with subject filtering, update mutation, and delete mutation with automatic cache invalidation",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-final"
+        ],
+        "quotes": [
+          "i wanna add pdf subject wise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Custom hooks follow existing pattern in useQueries.ts",
+        "Upload mutation handles file data and metadata",
+        "List query supports filtering by subject",
+        "Cache invalidation occurs after create, update, or delete operations",
+        "Loading and error states are properly managed"
+      ]
+    }
+  ],
+  "constraints": [
+    "Maintain single-actor backend architecture with all PDF logic in backend/main.mo",
+    "Follow existing CRUD patterns used for notes, syllabus, and PYQ management",
+    "Use admin-only access control consistent with existing content management features",
+    "Do not modify immutable frontend paths including hooks/useInternetIdentity files and components/ui directory"
+  ],
+  "nonGoals": [
+    "PDF viewer/reader embedded in the application",
+    "PDF editing or annotation features",
+    "Version control or revision history for PDFs",
+    "External cloud storage integration for PDF files",
+    "Automatic PDF text extraction or search within PDF content"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

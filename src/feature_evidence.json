@@ -1,0 +1,71 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-admin-panel-interface-for-managing-pdfs-with-file-upload-subject-selection-title-and-description-fields-and-list-view-showing-existing-pdfs-organized-by-subject",
+      "featureTitle": "Create admin panel interface for managing PDFs with file upload, subject selection, title and description fields, and list view showing existing PDFs organized by subject",
+      "files": [
+        "frontend/src/components/admin/PDFForm.tsx",
+        "frontend/src/components/admin/PDFManager.tsx",
+        "frontend/src/pages/AdminPanel.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-public-facing-interface-where-authenticated-users-can-browse-and-view-pdfs-organized-by-subject-with-download-or-view-capabilities",
+      "featureTitle": "Create public-facing interface where authenticated users can browse and view PDFs organized by subject with download or view capabilities",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/PDFCard.tsx",
+        "frontend/src/components/PDFFilters.tsx",
+        "frontend/src/pages/PDFsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-react-query-hooks-for-pdf-crud-operations-including-upload-mutation-list-query-with-subject-filtering-update-mutation-and-delete-mutation-with-automatic-cache-invalidation",
+      "featureTitle": "Implement React Query hooks for PDF CRUD operations including upload mutation, list query with subject filtering, update mutation, and delete mutation with automatic cache invalidation",
+      "files": [
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

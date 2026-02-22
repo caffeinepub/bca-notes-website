@@ -1,0 +1,103 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-21T09:07:02.269Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 5,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-13",
+        "summary": "Create backend data structure to store PDF files with metadata including subject, title, description, and file data as Blob type",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Implement backend CRUD operations for PDF management: create (upload), read (list and retrieve), update (metadata), and delete PDFs with admin-only access control",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Create admin panel interface for managing PDFs with file upload, subject selection, title and description fields, and list view showing existing PDFs organized by subject",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/admin/PDFForm.tsx",
+          "frontend/src/components/admin/PDFManager.tsx",
+          "frontend/src/pages/AdminPanel.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/admin/PDFForm.tsx",
+          "frontend/src/components/admin/PDFManager.tsx",
+          "frontend/src/pages/AdminPanel.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Create public-facing interface where authenticated users can browse and view PDFs organized by subject with download or view capabilities",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/PDFCard.tsx",
+          "frontend/src/components/PDFFilters.tsx",
+          "frontend/src/pages/PDFsPage.tsx",
+          "frontend/src/components/Header.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/PDFCard.tsx",
+          "frontend/src/components/PDFFilters.tsx",
+          "frontend/src/pages/PDFsPage.tsx",
+          "frontend/src/components/Header.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Implement React Query hooks for PDF CRUD operations including upload mutation, list query with subject filtering, update mutation, and delete mutation with automatic cache invalidation",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/PDFCard.tsx",
+    "frontend/src/components/PDFFilters.tsx",
+    "frontend/src/components/admin/PDFForm.tsx",
+    "frontend/src/components/admin/PDFManager.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/AdminPanel.tsx",
+    "frontend/src/pages/PDFsPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
